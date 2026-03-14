@@ -1,0 +1,18 @@
+export const ABSOLUTE_ROUTES = {
+  HOME: "/",
+  LOGIN: "/login",
+  REGISTER: "/register",
+  PROFILE: "/profile",
+  CART: "/cart",
+  CHECKOUT: "/checkout",
+  ORDERS: "/profile?tab=orders",
+  PAYMENT_SUCCESS: (orderId: string) => `/payment-success?order_id=${orderId}`,
+  PAYMENT_FAILED: "/payment-failed",
+  PAYMENT_CANCEL: "/payment-cancel",
+  WISHLIST: "/wishlist",
+  PRODUCTS: "/products",
+  PRODUCTS_BY_CATEGORY: (id: number | string) => `/products?category_id=${id}`,
+  PRODUCT_DETAILS: (id: number | string) => `/products/${id}`,
+  ORDER_DETAILS: (id: number | string) => `/profile/orders/${id}`,
+  PRODUCT_BY_SEARCH_PARAMS: (params: string) => `/products?${params}`,
+};

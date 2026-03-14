@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  # Development Server with Hot Reload
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: debuggermind-dev
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      # Mount source code for hot reload
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    env_file:
+      - .env.local
+    environment:
+      - NODE_ENV=development
+    networks:
+      - debuggermind-network
+
+networks:
+  debuggermind-network:
+    driver: bridge

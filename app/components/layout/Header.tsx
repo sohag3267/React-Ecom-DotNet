@@ -1,0 +1,220 @@
+"use client";
+
+import { LanguageSwitcher } from "@/components/shared/LanguageSwitcher";
+import type { Category } from "@/components/shared/models/category";
+import { Badge } from "@/components/shared/ui/badge";
+import { Button } from "@/components/shared/ui/button";
+import { useCart } from "@/contexts/CartContext";
+import { ABSOLUTE_ROUTES } from "@/lib/absolute-routes";
+import { useAtomValue } from "jotai";
+import { Menu, Moon, ShoppingCart, Sun, User, X } from "lucide-react";
+import { useTheme } from "next-themes";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState, Suspense } from "react";
+import { useTranslation } from "react-i18next";
+import { MobileNavigationClient } from "./MobileNavigationClient";
+import { businessSettingsAtom } from "@/store/ui-atoms";
+import Image from "next/image";
+import HeaderSearch from "./HeaderSearch";
+
+interface HeaderProps {
+	categories?: Category[];
+}
+
+export const Header = ({ categories = [] }: HeaderProps) => {
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+	const { t } = useTranslation();
+	// const setMiniProfile = useSetAtom(miniProfileAtom);
+	const router = useRouter();
+	const { theme, setTheme } = useTheme();
+	const { itemCount } = useCart();
+	const businessSettings = useAtomValue(businessSettingsAtom);
+
+	// const onLogout = () => {
+	// 	startTransition(async () => {
+	// 		const response = await logoutUser();
+	// 		if (response.success) {
+	// 			setMiniProfile(null);
+	// 		}
+	// 		router.push(ABSOLUTE_ROUTES.LOGIN);
+	// 	});
+	// };
+	// const miniProfile = useAtomValue(miniProfileAtom);
+
+	return (
+		<header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
+			<div className="container mx-auto px-3 md:px-4">
+				<div className="flex items-center justify-between h-16">
+					{/* Logo */}
+					<div
+						onClick={() => router.push(ABSOLUTE_ROUTES.HOME)}
+						className="flex items-center gap-2 cursor-pointer"
+					>
+						{businessSettings?.header_logo ? (
+							<Image
+								src={businessSettings.header_logo}
+								alt={businessSettings?.site_name || "Logo"}
+								width={120}
+								height={40}
+								className="object-contain max-h-10 w-auto"
+								priority
+							/>
+						) : (
+							<>
+								<div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+									<span className="text-primary-foreground font-bold text-lg">
+										{businessSettings?.site_name.charAt(0).toUpperCase() || "D"}
+									</span>
+								</div>
+								<span className="text-xl font-bold text-foreground">
+									{businessSettings?.site_name || "DebuggerMind"}
+								</span>
+							</>
+						)}
+					</div>
+
+					{/* Desktop Search Bar */}
+					<Suspense fallback={<div className="w-64" />}>
+						<div className="hidden md:block">
+							<HeaderSearch placement="desktop" />
+						</div>
+					</Suspense>
+
+					{/* Right Actions */}
+					<div className="flex items-center gap-0 sm:gap-1">
+
+						{/* Language Switcher */}
+						<LanguageSwitcher />
+
+						{/* Theme Toggle */}
+						<Button
+							variant="ghost"
+							size="icon"
+							onClick={() =>
+								setTheme(theme === "dark" ? "light" : "dark")
+							}
+							className="w-9 h-9"
+						>
+							{theme === "dark" ? (
+								<Sun className="w-4 h-4" />
+							) : (
+								<Moon className="w-4 h-4" />
+							)}
+						</Button>
+
+						{/* Cart */}
+						<Button
+							variant="ghost"
+							size="icon"
+							className="relative"
+							asChild
+						>
+							<Link href="/cart">
+								<ShoppingCart className="w-5 h-5" />
+								{itemCount > 0 && (
+									<Badge
+										variant="destructive"
+										className="absolute -top-2 -right-2 w-5 h-5 text-xs flex items-center justify-center p-0"
+									>
+										{itemCount}
+									</Badge>
+								)}
+							</Link>
+						</Button>
+
+						{/* User Account */}
+						<Button
+							variant="ghost"
+							size="icon"
+							className="hidden sm:flex"
+							asChild
+						>
+							<Link href="/profile">
+								<User className="w-5 h-5" />
+							</Link>
+						</Button>
+						{/* <Button
+							variant="destructive"
+							className={
+								miniProfile?.email
+									? "hidden sm:inline-flex"
+									: "hidden"
+							}
+							onClick={onLogout}
+						>
+							<LogOutIcon className="size-5" />
+						</Button> */}
+
+						{/* Mobile Search Icon */}
+						<Suspense fallback={<div className="w-9 h-9" />}>
+							<HeaderSearch placement="mobile" />
+						</Suspense>
+
+						<Button
+							variant="ghost"
+							size="icon"
+							className="md:hidden"
+							onClick={() => setIsMenuOpen(!isMenuOpen)}
+						>
+							{isMenuOpen ? (
+								<X className="w-5 h-5" />
+							) : (
+								<Menu className="w-5 h-5" />
+							)}
+						</Button>
+					</div>
+				</div>
+
+				{/* Mobile Menu */}
+				{isMenuOpen ? (
+					<div className="md:hidden h-screen">
+						{/* Mobile Category Navigation */}
+						{categories.length > 0 && (
+							<div className="lg:hidden border-t bg-background/95 backdrop-blur">
+								<Suspense fallback={<div className="h-32" />}>
+									<MobileNavigationClient
+										categories={categories}
+										onClose={() => setIsMenuOpen(false)}
+									/>
+								</Suspense>
+							</div>
+						)}{" "}
+						{/* Mobile User Menu */}
+						<div className="border-t py-2 px-2">
+							<nav className="space-y-1">
+								<Button
+									variant="ghost"
+									className="w-full justify-start"
+									asChild
+								>
+									<Link
+										href="/profile"
+										onClick={() => setIsMenuOpen(false)}
+									>
+										<User className="w-4 h-4 mr-2" />
+										{t("header.profile")}
+									</Link>
+								</Button>
+								{/* {miniProfile?.email ? (
+									<Button
+										variant="ghost"
+										className="w-full justify-start"
+										onClick={() => {
+											setIsMenuOpen(false);
+											onLogout();
+										}}
+									>
+										<LogOutIcon className="size-4 mr-2" />
+										{t("header.logout")}
+									</Button>
+								) : null} */}
+							</nav>
+						</div>
+					</div>
+				) : null}
+			</div>
+		</header>
+	);
+};

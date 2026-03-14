@@ -1,0 +1,134 @@
+DebuggerMind - Third-Party Licenses
+
+This software includes components from the following open source projects:
+
+================================================================================
+Next.js
+================================================================================
+License: MIT
+Copyright (c) 2024 Vercel, Inc.
+https://github.com/vercel/next.js/blob/canary/license.md
+
+================================================================================
+React
+================================================================================
+License: MIT
+Copyright (c) Meta Platforms, Inc. and affiliates.
+https://github.com/facebook/react/blob/main/LICENSE
+
+================================================================================
+Radix UI
+================================================================================
+License: MIT
+Copyright (c) 2022 WorkOS
+https://github.com/radix-ui/primitives/blob/main/LICENSE
+
+================================================================================
+shadcn/ui
+================================================================================
+License: MIT
+Copyright (c) 2023 shadcn
+https://github.com/shadcn/ui/blob/main/LICENSE.md
+
+================================================================================
+Tailwind CSS
+================================================================================
+License: MIT
+Copyright (c) Tailwind Labs, Inc.
+https://github.com/tailwindlabs/tailwindcss/blob/master/LICENSE
+
+================================================================================
+Lucide Icons
+================================================================================
+License: ISC
+https://github.com/lucide-icons/lucide/blob/main/LICENSE
+
+================================================================================
+Jotai
+================================================================================
+License: MIT
+Copyright (c) 2020 Poimandres
+https://github.com/pmndrs/jotai/blob/main/LICENSE
+
+================================================================================
+react-i18next
+================================================================================
+License: MIT
+Copyright (c) 2024 i18next
+https://github.com/i18next/react-i18next/blob/master/LICENSE
+
+================================================================================
+Zod
+================================================================================
+License: MIT
+Copyright (c) 2020 Colin McDonnell
+https://github.com/colinhacks/zod/blob/master/LICENSE
+
+================================================================================
+React Hook Form
+================================================================================
+License: MIT
+Copyright (c) 2019-present Beier(Bill) Luo
+https://github.com/react-hook-form/react-hook-form/blob/master/LICENSE
+
+================================================================================
+Sonner
+================================================================================
+License: MIT
+Copyright (c) 2023 Emil Kowalski
+https://github.com/emilkowalski/sonner/blob/main/LICENSE
+
+================================================================================
+next-themes
+================================================================================
+License: MIT
+Copyright (c) 2020 pacocoursey
+https://github.com/pacocoursey/next-themes/blob/main/LICENSE
+
+================================================================================
+class-variance-authority
+================================================================================
+License: Apache 2.0
+https://github.com/joe-bell/cva/blob/main/LICENSE
+
+================================================================================
+clsx
+================================================================================
+License: MIT
+Copyright (c) Luke Edwards <luke.edwards05@gmail.com>
+https://github.com/lukeed/clsx/blob/master/license
+
+================================================================================
+tailwind-merge
+================================================================================
+License: MIT
+https://github.com/dcastil/tailwind-merge/blob/main/LICENSE
+
+================================================================================
+
+MIT License Full Text:
+---
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+================================================================================
+
+All other dependencies listed in package.json are also licensed under
+their respective open source licenses (MIT, Apache 2.0, ISC, etc.).
+
+For the complete list of dependencies, see package.json.
+For specific license information about any dependency, check its repository.

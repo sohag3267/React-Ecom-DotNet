@@ -1,0 +1,60 @@
+DebuggerMind - Regular License
+
+Copyright (c) 2025
+
+IMPORTANT: This license grants you, the purchaser, an ongoing, non-exclusive, worldwide license to use the digital work (Item) you have selected.
+
+REGULAR LICENSE TERMS
+
+1. LICENSE GRANT
+   By purchasing this Item, you are granted a non-exclusive license to use the Item. The license is granted only to you and is not transferable.
+
+2. PERMITTED USE
+   You may use the Item to create one single End Product for yourself or for one client (a "single application").
+
+   The End Product may be used for commercial purposes, for yourself or a client. Examples:
+   - An e-commerce website for yourself or a client
+   - A web application where the primary purpose is selling products
+   - An internal business application
+
+3. WHAT YOU CAN DO WITH THE ITEM
+   ✓ You can create one End Product for a client
+   ✓ You can modify or manipulate the Item
+   ✓ You can combine the Item with other works and make a derivative work from it
+   ✓ The resulting works are subject to the terms of this license
+   ✓ You can use the Item in work which you are creating for your own purposes or for your client
+
+4. WHAT YOU CANNOT DO WITH THE ITEM
+   ✗ You cannot redistribute the Item as stock, in a tool or template, or with source files
+   ✗ You cannot do the same with an Item bundled with other items
+   ✗ You cannot redistribute or make available the Item as-is or with superficial modifications
+   ✗ You cannot use the Item in any application allowing an end user to customize a digital or physical product
+   ✗ You cannot use the Item for on-demand services
+   ✗ You must not permit end users to extract the Item and use it separately
+
+5. MULTI-USE
+   If you want to use the Item to create more than one End Product, you will need to purchase a separate license for each End Product.
+
+6. OPEN SOURCE COMPONENTS
+   This Item may contain components licensed under open source licenses (MIT, Apache 2.0, etc.). These components are subject to their respective licenses. See THIRD-PARTY-LICENSES.txt for details.
+
+7. SUPPORT
+   The author is not obligated to provide support but may choose to do so at their discretion. Please contact through Envato Market for support inquiries.
+
+8. UPDATES
+   Updates to the Item may be provided at the author's discretion. You are entitled to download and use any updates released during your access to the Item.
+
+9. LIABILITY
+   The Item is provided "as is" without warranty of any kind. In no event shall the authors be liable for any claim, damages, or other liability arising from the use of the Item.
+
+10. TERMINATION
+    This license is effective until terminated. Your rights will terminate automatically without notice if you fail to comply with any term of this license.
+
+For the full Envato Market Regular License terms, visit:
+https://codecanyon.net/licenses/standard
+
+EXTENDED LICENSE AVAILABLE
+For use in products where the Item is sold to multiple customers or for SaaS applications, an Extended License must be purchased separately.
+
+QUESTIONS?
+For licensing questions, please contact through Envato Market.
